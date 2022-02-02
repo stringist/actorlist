@@ -1,8 +1,9 @@
 const urlParams = new URLSearchParams(window.location.search);
 const fullname = urlParams.get("fullname");
 
-const endpoint = ('./actors.json') + [fullname];
+// const endpoint = ('./actors.json') + [fullname];
 const url = ('./actors.json');
+// const url = ('./actors.json') + '/' + fullname.split(" ").join("");
 console.log(url);
 
 fetch(url)
@@ -31,11 +32,6 @@ function handleData(actor) {
 function showInfo(actor) {
     console.log(actor);
 
-    // const template = document.querySelector("#actor_name").content;
-    // const copy = template.cloneNode(true);
-
-    // copy.querySelector("#name").textContent = actor.fullname;
-    // const elemParent = document.querySelector("ul");
-    // elemParent.appendChild(copy);
-
+    document.querySelector("#popName").textContent = actor.fullname;
+    document.querySelector("#movie").textContent = actor.movie;
 }

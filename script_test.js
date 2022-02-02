@@ -1,8 +1,8 @@
 const urlParams = new URLSearchParams(window.location.search);
-// const actor = urlParams.get("fullname");
+const fullname = urlParams.get("fullname");
 
-const url = ('./actors.json')
-    // console.log(url);
+const url = ('./actors.json');
+console.log(url);
 
 fetch(url)
     .then((response) => {
@@ -34,14 +34,15 @@ function showInfo(actor) {
     const copy = template.cloneNode(true);
 
     copy.querySelector("#name").textContent = actor.fullname;
+    copy.querySelector("a").href = `popUp.html?fullname=${actor.fullname}`;
     const elemParent = document.querySelector("ul");
     elemParent.appendChild(copy);
-
 }
+
 // const params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
 // width=600,height=300,left=100,top=100`;
 
-// const button =
-//     button.onclick = () => {
-//         window.open('https://javascript.info', 'Actor Info', params);
-//     };
+// const popLink = copy.querySelector('#name');
+// popLink.onclick = () => {
+//     window.open('https://javascript.info', 'Actor Info', params);
+// };
