@@ -1,11 +1,8 @@
-const url = './actors.json'
-console.log(url);
+const urlParams = new URLSearchParams(window.location.search);
+const actor = urlParams.get("fullname");
 
-// const options = {
-//     headers: {
-//         "x-apikey": "613731bc43cedb6d1f97edad",
-//     },
-// };
+const url = ('./actors.json')
+    // console.log(url);
 
 fetch(url)
     .then((response) => {
@@ -16,7 +13,7 @@ fetch(url)
     })
     .then((data) => {
         // we have the data
-        getActor(data);
+        handleData(data);
     })
     .catch((e) => {
         // Something went wrong
@@ -24,8 +21,9 @@ fetch(url)
     });
 
 //loop
-function getActor(actor) {
-    actor.forEach(showActor);
+function handleData(actors) {
+    actor.forEach(actor);
+    console.log(actor);
 }
 
 function showInfo(info) {
@@ -41,7 +39,7 @@ function showInfo(info) {
     copy
         .querySelector("#name")
         // .setAttribute("href", "product_view.html?id=" + item._id);
-    console.log(actor.name);
+    console.log(actor.fullname);
 
     // change dynamic data
     document.querySelector("#name").textContent = fullname;
@@ -55,3 +53,10 @@ function showInfo(info) {
     const elemParent = document.querySelector("ul");
     elemParent.appendChild(copy);
 }
+const params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
+width=600,height=300,left=100,top=100`;
+
+// const button =
+//     button.onclick = () => {
+//         window.open('https://javascript.info', 'Actor Info', params);
+//     };
