@@ -42,7 +42,7 @@ function showInfo(info) {
     copy
         .querySelector("#name")
         // .setAttribute("href", "product_view.html?id=" + item._id);
-    console.log(actor.name);
+        // console.log(info.fullname);
 
     // change dynamic data
     document.querySelector("#name").textContent = fullname;
