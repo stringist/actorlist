@@ -16,6 +16,7 @@ fetch(url)
     })
     .then((data) => {
         // we have the data
+        console.log(data);
         getActor(data);
     })
     .catch((e) => {

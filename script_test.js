@@ -13,6 +13,7 @@ fetch(url)
     })
     .then((data) => {
         // we have the data
+        console.log(data);
         handleData(data);
     })
     .catch((e) => {
@@ -21,8 +22,8 @@ fetch(url)
     });
 
 //loop
-function handleData(actors) {
-    actor.forEach(actor);
+function handleData(actorList) {
+    actor.forEach(showInfo);
     console.log(actor);
 }
 
